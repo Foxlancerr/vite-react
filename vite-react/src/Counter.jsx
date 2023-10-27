@@ -28,8 +28,8 @@ function Counter() {
   return (
     <>
       <h2>Counter: {counter}</h2>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      <button onClick={increment} className="bg-slate-100 px-[30px] rounded m-[10px]">+</button>
+      <button className="bg-slate-100 px-[30px] rounded m-[10px]" onClick={decrement}>-</button>
     </>
   );
 }
