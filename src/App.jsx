@@ -9,6 +9,38 @@ function App() {
 export default App;
 
 /**
+ * Inline Sub componets
+ * ******************************************************
+ */
+// const SubComponent = () => <h1>Sub Component</h1>;
+// const List = () => {
+//   return (
+//     <ul>
+//       <li>List1</li>
+//       <li>List2</li>
+//       <li>List3</li>
+//     </ul>
+//   );
+// };
+// const Para = () => {
+//   return <p>Paragraph</p>;
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <SubComponent />
+//       <List></List>
+//       <Para></Para>
+//       <hr />
+//       <h1>Hello World</h1>
+//     </>
+//   );
+// }
+
+// export default App;
+
+/**
  * Inline stylings
  * ******************************************************
  */
