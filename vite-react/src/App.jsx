@@ -1,14 +1,16 @@
+import Counter from "./Counter";
 function App() {
+  
   return (
     <>
       <h1>Hello World</h1>
+      <hr />
+      <Counter></Counter>
     </>
   );
 }
 
 export default App;
-
-
 
 /**
  * Inline Sub componets
