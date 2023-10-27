@@ -1,3 +1,26 @@
+// function App() {
+//   return (
+//     <>
+//       <h1>Hello World</h1>
+//     </>
+//   );
+// }
+
+// export default App;
+
+/**
+ * How React Work Behind The Scene
+ * ******************************************************
+ */
+
+const Demo1 = {
+  type: "a",
+  props: {
+    href : "#",
+    target: "_blank"
+  }
+}
+
 function App() {
   return (
     <>
