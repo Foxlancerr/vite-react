@@ -1,11 +1,13 @@
-import Counter from "./Counter";
+import { Counter, BackgroundColor } from "./components/index";
+
 function App() {
-  
   return (
     <>
       <h1>Hello World</h1>
       <hr />
-      <Counter></Counter>
+      <BackgroundColor>
+        <Counter></Counter>
+      </BackgroundColor>
     </>
   );
 }

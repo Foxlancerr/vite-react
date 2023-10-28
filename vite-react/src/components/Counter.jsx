@@ -16,12 +16,10 @@ function Counter() {
   let [counter, setCounter] = useState(15);
   const increment = () => {
     setCounter((counter = counter + 1));
-    // counter += 1;
     console.log(counter);
   };
   const decrement = () => {
     setCounter((counter = counter - 1));
-    // counter -= 1;
     console.log(counter);
   };
 
