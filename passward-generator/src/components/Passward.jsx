@@ -3,11 +3,11 @@ import React from "react";
 const Passward = () => {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center my-[20px]">
-        Passward Generator
-      </h1>
-      <div className="flex justify-center h-screen items-center">
-        <div className="bg-red-400 p-10 rounded-3xl">
+      <div className="flex justify-center flex-col h-screen items-center">
+        <h1 className="text-4xl font-bold text-center my-[20px]">
+          Passward Generator
+        </h1>
+        <div className="bg-slate-200 p-10 rounded-3xl">
           <div className="flex bg-gray-300 rounded-full w-full overflow-hidden">
             <input
               className="bg-blue-500 text-white px-5 border-none outline-none py-2 w-full placeholder-white"
@@ -19,17 +19,17 @@ const Passward = () => {
               Copy
             </label>
           </div>
-          <div className="mt-10 flex gap-5">
+          <div className="mt-10 flex gap-5 text-blue-500 font-bold">
             <div className="flex gap-2">
-              <input type="range" id="length" />
+              <input type="range" id="length" className="cursor-pointer" />
               <label htmlFor="length">0 Length</label>
             </div>
-            <div className="flex gap-2">
-              <input type="checkbox" id="char" />
+            <div className="flex gap-2 cursor-pointer">
+              <input type="checkbox" id="char" className="cursor-pointer" />
               <label htmlFor="char">Character</label>
             </div>
-            <div className="flex gap-2">
-              <input type="checkbox" id="int" />
+            <div className="flex gap-2 cursor-pointer">
+              <input type="checkbox" id="int" className="cursor-pointer" />
               <label htmlFor="int">Integers</label>
             </div>
           </div>
