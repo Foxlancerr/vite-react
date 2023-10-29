@@ -1,10 +1,17 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 
 const Passward = () => {
   const [length, setLength] = useState("8");
   const [char, setChar] = useState(false);
   const [int, setInt] = useState(false);
   const [password, setPassword] = useState("password");
+
+  const pswRef = useRef(null);
+
+  const pswClip = useCallback(() => {
+    pswRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  }, [password]);
 
   const PswGen = useCallback(() => {
     let pass = "";
@@ -27,22 +34,27 @@ const Passward = () => {
   return (
     <div>
       <div className="flex justify-center flex-col h-screen items-center">
-        <h1 className="text-4xl font-bold text-center my-[20px]">
+        <h1 className="text-2xl font-bold text-center my-[20px] sm:text-4xl">
           Passward Generator
         </h1>
-        <div className="bg-slate-200 p-10 rounded-3xl">
-          <div className="flex bg-gray-300 rounded-full w-full overflow-hidden">
+        <div className="bg-slate-200 p-7 rounded-3xl sm:p-10">
+          <div className="flex bg-gray-300 rounded-[10px] w-full overflow-hidden flex-col sm:flex-row sm:rounded-full">
             <input
-              className="bg-blue-500 text-white px-5 border-none outline-none py-2 w-full placeholder-white"
+              className="bg-white text-blue-500 px-5 border-none outline-none py-2 w-full placeholder-white"
               type="text"
               value={password}
+              ref={pswRef}
               readOnly
             />
-            <label htmlFor="copy" className="py-2 px-5 cursor-pointer">
+            <button
+              htmlFor="copy"
+              className="py-2 px-5 cursor-pointer bg-blue-500 text-white font-bold hover:bg-blue-300"
+              onClick={pswClip}
+            >
               Copy
-            </label>
+            </button>
           </div>
-          <div className="mt-10 flex gap-5 text-blue-500 font-bold">
+          <div className="mt-10 flex gap-5 flex-col text-blue-500 font-bold sm:flex-row">
             <div className="flex gap-2">
               <input
                 type="range"

@@ -2,10 +2,6 @@
 
 <a href="http://psw-generator.surge.sh/">Live Demo</a>
 
-## UI Design
-
-<img src="./src/assets/front.jpg" width="100%" height="800px">
-
 ## Language Used
 
 1. HTML5
