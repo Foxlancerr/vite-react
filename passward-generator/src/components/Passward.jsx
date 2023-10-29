@@ -1,16 +1,29 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 
 const Passward = () => {
   const [length, setLength] = useState("8");
-  const [char, setChar] = useState(true);
+  const [char, setChar] = useState(false);
   const [int, setInt] = useState(false);
   const [password, setPassword] = useState("password");
 
-  const PswGen = () => {
-    let alphabits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
-    let numbers = "0123456789";
-    let charactrs = "@#$&%^&*()[]-_=+:;<=>?@";
-  };
+  const PswGen = useCallback(() => {
+    let pass = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
+    if (int) str += "0123456789";
+    if (char) str += "@#$&%^&*()[]-_=+:;<=>?@";
+
+    for (let i = 1; i <= length; i++) {
+      let c = Math.floor(Math.random() * str.length + 1);
+
+      pass += str.charAt(c);
+    }
+    setPassword(pass);
+  }, [length, password, char, int]);
+
+  useEffect(() => {
+    PswGen();
+  }, [length, char]);
+
   return (
     <div>
       <div className="flex justify-center flex-col h-screen items-center">
