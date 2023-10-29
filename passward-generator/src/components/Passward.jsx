@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 const Passward = () => {
+  const [length, setLength] = useState("8");
+  const [char, setChar] = useState(true);
+  const [int, setInt] = useState(false);
+  const [password, setPassword] = useState("password");
+
+  const PswGen = () => {
+    let alphabits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
+    let numbers = "0123456789";
+    let charactrs = "@#$&%^&*()[]-_=+:;<=>?@";
+  };
   return (
     <div>
       <div className="flex justify-center flex-col h-screen items-center">
@@ -12,7 +22,7 @@ const Passward = () => {
             <input
               className="bg-blue-500 text-white px-5 border-none outline-none py-2 w-full placeholder-white"
               type="text"
-              placeholder="Password"
+              value={password}
               readOnly
             />
             <label htmlFor="copy" className="py-2 px-5 cursor-pointer">
@@ -21,15 +31,39 @@ const Passward = () => {
           </div>
           <div className="mt-10 flex gap-5 text-blue-500 font-bold">
             <div className="flex gap-2">
-              <input type="range" id="length" className="cursor-pointer" />
-              <label htmlFor="length">0 Length</label>
+              <input
+                type="range"
+                id="length"
+                value={length}
+                onChange={(e) => {
+                  setLength(e.target.value);
+                }}
+                className="cursor-pointer border-none"
+              />
+              <label htmlFor="length">{length} Length</label>
             </div>
             <div className="flex gap-2 cursor-pointer">
-              <input type="checkbox" id="char" className="cursor-pointer" />
+              <input
+                type="checkbox"
+                id="char"
+                className="cursor-pointer"
+                value={char}
+                onChange={() => {
+                  setChar((prev) => !prev);
+                }}
+              />
               <label htmlFor="char">Character</label>
             </div>
             <div className="flex gap-2 cursor-pointer">
-              <input type="checkbox" id="int" className="cursor-pointer" />
+              <input
+                type="checkbox"
+                id="int"
+                className="cursor-pointer"
+                value={int}
+                onChange={() => {
+                  setInt((prev) => !prev);
+                }}
+              />
               <label htmlFor="int">Integers</label>
             </div>
           </div>
