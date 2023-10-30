@@ -9,7 +9,7 @@ const InputBox = ({
   selectCurrency = "usd",
 }) => {
   return (
-    <div className="flex items-center justify-between bg-blue-800 p-4 rounded-[10px] gap-5">
+    <div className="flex items-center justify-between bg-blue-800 bg-opacity-80 p-4 rounded-[10px] gap-5">
       <div className="flex flex-col gap-2">
         <label htmlFor="From" className="font-bold text-[20px]">
           {label}

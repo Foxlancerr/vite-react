@@ -4,10 +4,10 @@ import bgImage from "./assets/bgImage.jpg";
 import { useState } from "react";
 
 function App() {
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState(0);
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [cvtAmount, setCvtAmount] = useState(null);
+  const [cvtAmount, setCvtAmount] = useState(0);
 
   // Custom Hooks is called
   const currencyInfo = useFetchCurrency(from);
@@ -31,13 +31,13 @@ function App() {
       className="h-screen w-full bg-cover bg-center bg-opacity-0 bg-no-repeat flex justify-center items-center text-white"
     >
       <form
-        className="w-3/5 bg-white bg-opacity-40 p-10 rounded-[10px]"
+        className="w-3/5 bg-white bg-opacity-40 p-10 rounded-[10px] flex flex-col gap-5"
         onSubmit={(e) => {
           e.preventDefault();
           convert();
         }}
       >
-        <div className="flex flex-col relative gap-6">
+        <div className="flex flex-col relative gap-5">
           <InputBox
             label="From"
             onCurrencyChange={(currency) => {
