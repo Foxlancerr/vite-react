@@ -9,15 +9,15 @@ const InputBox = ({
   selectCurrency = "usd",
 }) => {
   return (
-    <div className="flex items-center justify-between bg-blue-800 bg-opacity-80 p-4 rounded-[10px] gap-5">
+    <div className="sm:flex-row flex-col flex items-cente justify-between bg-blue-800 bg-opacity-80 p-4 rounded-[10px] sm:gap-5 gap-1">
       <div className="flex flex-col gap-2">
-        <label htmlFor="From" className="font-bold text-[20px]">
+        <label htmlFor={label} className="font-bold sm:text-[20px] w-max">
           {label}
         </label>
         <input
-          className="border-none outline-none px-[10px] py-[5px] text-blue-800 rounded-[8px]"
+          className="border-none outline-none sm:py-[4px] px-[10px] py-[2px] text-blue-800 rounded-[8px]"
           type="number"
-          id="from"
+          id={label}
           value={amount}
           onChange={(e) => {
             onAmountChange && onAmountChange(Number(e.target.value));
@@ -25,9 +25,9 @@ const InputBox = ({
         />
       </div>
       <div className="flex flex-col gap-2">
-        <p className="font-bold text-[18px]">Currency Type</p>
+        <p className="font-bold sm:text-[20px]">Currency Type</p>
         <select
-          className="border-none outline-none px-[10px] py-[5px] text-blue-800 rounded-[8px]"
+          className="border-none outline-none px-[10px] sm:py-[4px] py-[2px] text-blue-800 rounded-[8px]"
           value={selectCurrency}
           onChange={(e) => {
             onCurrencyChange && onCurrencyChange(e.target.value);
