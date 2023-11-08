@@ -8,7 +8,7 @@ const Login = () => {
     const [password, SetPassword] = useState("")
     const handleSubmit = (e) =>{
         e.preventDefault()
-        setUserInfo( username, password)
+        setUserInfo({ username, password });
     }
   return (
     <div className="flex flex-col gap-2 mt-5 p-5 rounded-lg w-3/5 bg-blue-800 mx-auto">
