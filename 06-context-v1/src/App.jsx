@@ -19,10 +19,10 @@ function App() {
     document.querySelector("html").classList.add(defaultTheme);
   }, [defaultTheme]);
   return (
-    <ThemeProvider>
+    <ThemeProvider value={{darkTheme,lightTheme,defaultTheme}}>
       <div className="flex flex-col gap-2 justify-center bg-red-500 items-center h-screen">
-        <Card></Card>
         <Button></Button>
+        <Card></Card>
       </div>
       
     </ThemeProvider>
