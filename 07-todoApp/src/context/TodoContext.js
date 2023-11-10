@@ -3,9 +3,9 @@ import { useContext, createContext } from "react";
 export const todoContext = createContext({
     todos: [
         {
-            id: 1,
-            message: 'hello world',
-            completed: false
+            id:1,
+            message:"hello",
+            complete: false
         }
     ],
     addTodo: (todo) => { },

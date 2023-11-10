@@ -19,35 +19,37 @@ function App() {
   }, [todos]);
 
   const addTodo = (todo) => {
+    if (!todo) return;
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
 
-  const updateTodo = (id, todo) => {
-    setTodos((prev) => {
-      prev.map((prevTodo) => (prev.id === id ? todo : prevTodo));
-    });
-  };
+  const updateTodo = (id, todo) =>
+    setTodos((prev) =>
+      prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
+    );
 
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((prevTodo) => prevTodo.id !== id));
   };
 
   const toggleTodoComplete = (id) => {
-    setTodos((prev) => {
+    setTodos((prev) =>
       prev.map((prevTodo) =>
-        prev.id === id
-          ? { completed: !prevTodo.completed, ...prevTodo }
+        prevTodo.id === id
+          ? { ...prevTodo, complete: !prevTodo.complete }
           : prevTodo
-      );
-    });
+      )
+    );
   };
-  console.log(todos);
+
   return (
     <TodoProvider
       value={{ todos, addTodo, deleteTodo, updateTodo, toggleTodoComplete }}
     >
       <div className="flex flex-col gap-2 items-center h-screen bg-yellow-200 justify-start">
-        <h1 className="text-5xl my-10 font-medium text-yellow-800">Todo App</h1>
+        <h1 className="text-5xl my-10 font-medium text-yellow-800">
+          Write your Sehdule
+        </h1>
         <div className="bg-yellow-500 w-[70%] h-max rounded-lg p-4 md:w-[50%] ">
           <TodoForm></TodoForm>
           <div className="flex flex-col gap-4 mt-5 w-full">
