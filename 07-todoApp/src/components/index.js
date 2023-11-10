@@ -1,7 +1,6 @@
-import BackgroundColor from "./BackgroundColor";
-import Counter from "./Counter";
+import TodoForm from "./TodoForm"
+import TodoList from "./TodoList"
 
 export {
-    BackgroundColor,
-    Counter,
+   TodoForm,TodoList
 }
