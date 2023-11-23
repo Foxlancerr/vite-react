@@ -1,7 +1,5 @@
-import BackgroundColor from "./BackgroundColor";
-import Counter from "./Counter";
+import Navbar from "./Navbar"
 
 export {
-    BackgroundColor,
-    Counter,
+    Navbar
 }
