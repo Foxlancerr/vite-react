@@ -40,6 +40,13 @@ const Navbar = () => {
       >
         Product
       </NavLink>
+      <NavLink
+        style={linkStyle}
+        to="/search"
+        className="text-2xl font-bold"
+      >
+        Search
+      </NavLink>
     </nav>
   );
 };

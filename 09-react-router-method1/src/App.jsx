@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, About, Contact, NotFound, Product } from "./pages";
+import { Home, About, Contact, NotFound, Product,Search } from "./pages";
 import {
   Navbar,
   Shirt,
@@ -16,6 +16,7 @@ function App() {
         <Route path="/" element={<Home></Home>} />
         <Route path="/about" element={<About></About>} />
         <Route path="/contact" element={<Contact></Contact>} />
+        <Route path="/search" element={<Search></Search>} />
 
         {/* Nested routes */}
 
